@@ -1,0 +1,24 @@
+
+product_info = {
+    "features": "Our product offers advanced features like X, Y, and Z.",
+    "price": "The price of our product starts from $X.",
+    "availability": "Our product is currently in stock and available for purchase.",
+    "contact": "For any further inquiries, please contact us at contact@example.com.",
+    "default": "I'm sorry, I didn't understand your query. How can I assist you?"
+}
+
+def get_response(query):
+    query = query.lower()
+    return product_info.get(query, product_info["default"])
+
+print("Welcome to our product support chatbot!")
+print("How can I assist you today?")
+
+while True:
+    user_input = input("You: ")
+    response = get_response(user_input)
+    print("Chatbot: " + response)
+
+    if user_input.lower() in ["exit", "quit", "bye"]:
+        print("Chatbot: Thank you for using our product support chatbot. Goodbye!")
+        break
